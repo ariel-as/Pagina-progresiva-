@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="App web progresiva: usuarios de JSONPlaceholder con IndexedDB y soporte offline.">
+  <meta name="theme-color" content="#3b5bfd">
+  <title>Página Progresiva - Usuarios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Usuarios (JSONPlaceholder)</h1>
+    <p class="subtitulo">Demo de PWA: los datos se guardan en IndexedDB y siguen disponibles sin conexión.</p>
+  </header>
+
+  <!-- Estado de conexión -->
+  <p id="estado" role="status" aria-live="polite">Cargando...</p>
+
+  <button id="btn-sincronizar" type="button">Sincronizar con la API</button>
+
+  <!-- Formulario para ingreso local de datos -->
+  <form id="formulario" class="card">
+    <h2>Agregar usuario (datos locales)</h2>
+    <input type="text" id="nombre" placeholder="Nombre" autocomplete="name" required>
+    <input type="email" id="email" placeholder="Email" autocomplete="email" required>
+    <button type="submit">Guardar en IndexedDB</button>
+  </form>
+
+  <!-- Lista de usuarios -->
+  <section class="card">
+    <h2>Lista de usuarios</h2>
+    <ul id="lista" aria-live="polite"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
